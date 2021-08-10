@@ -7,6 +7,6 @@ const productrSchem = new mongoose.Schema({
     userId : {type: String, required : true},
 })
 
-const Products = mongoose.model("Products",productrSchem);
+const Product = mongoose.model("Products",productrSchem);
 
-module.exports = Products;
+module.exports = Product;
