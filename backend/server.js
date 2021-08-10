@@ -8,6 +8,8 @@ require("dotenv").config();
 
 /*---------------------------------set up server-------------------------------*/
 const app = express();
+app.use(express.json());
+
 
 const PORT = process.env.PORT || 5000;
 
@@ -36,3 +38,6 @@ connection.once("open", ()=>{
 
 
 /*---------------------------------set Routes-------------------------------*/
+
+//This route for test
+app.use("/auth",require('./routes/userRoutes'));
