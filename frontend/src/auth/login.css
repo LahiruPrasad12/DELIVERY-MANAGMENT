@@ -1,0 +1,107 @@
+
+
+
+h1{
+    font-size: 50px;
+    color: whitesmoke;
+}
+
+.logoImage{
+    width: 130px;
+    height: 130px;
+    border-radius: 100px;
+    margin-left: 250px;
+    transition: 1s;
+    background: white;
+}
+
+
+.form-control{
+    background: transparent;
+    border-radius: 0px;
+    border: 0px;
+    border-bottom: 2px solid lightgreen;
+    color: rgb(2, 2, 2);
+    font-size: 21px;
+    margin-top: 0px;
+    padding: 10px;
+  
+}
+
+.text-center{
+    margin-top: 50px;
+    color: black;
+    background: transparent;
+}
+
+.btn-info{
+    margin-bottom: 1000px;
+    font-size: 21px;
+    width: 200px;
+    margin-top: 30px;
+    background: transparent;
+    color: white;
+    background-color: rgb(2, 203, 238);
+}
+
+.btn-info1{
+    /* margin-bottom: 1000px; */
+    font-size: 21px;
+    width: 200px;
+    margin-top: -100px;
+    margin-left: 235px;
+    background: transparent;
+    color: rgb(12, 11, 11);
+}
+
+.btn-info2{
+    /* margin-bottom: 1000px; */
+    font-size: 21px;
+    width: 200px;
+    margin-top: -30px;
+    margin-left: 100px;
+    background: transparent;
+    color: rgb(8, 8, 8);
+}
+
+.register{
+    /* margin-bottom: 1000px; */
+    font-size: 21px;
+    width: 300px;
+    margin-top: -970px;
+    margin-left: 200px;
+    background: transparent;
+    color: rgb(8, 8, 8);
+}
+
+.regLink{
+    background: transparent;
+}
+
+.btn-info1:hover{
+   color: blue;
+}
+
+/* .col-md-6{
+    margin-top: 100px;
+    box-shadow: -1px 1px 50px 10px rgb(0, 0, 0);
+    border-radius: 0px 100px 0px 100px;
+    height: 600px;
+    background: rgba(240, 16, 16, 0);
+
+} */
+
+.bt{
+    
+    margin-top: -100px;
+}
+
+.Forgot{
+    margin-left: 500px;
+    margin-bottom: 500px;
+}
+
+/* .col-md-6{
+   background-image: url(../images/Student2.jpg);
+
+} */

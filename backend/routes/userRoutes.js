@@ -92,16 +92,20 @@ router.post('/login',async(req,res)=>{
 
         //Get user enterd details
         const {email,password} = req.body;
-
+        console.log(email, password)
          /*-----------------------validate details-------------------------*/
         //chack user filed all required data
-        if(!email || !password)
+        if(!email || !password){
             return res.status(400).json({msg : "please enter all required fill"})
+        }
+            
 
         //check user enter mail is whether exsisting the database
-        var existingUser = await User.findOne({email});
-        if(!existingUser)
+        const existingUser = await User.findOne({email});
+        if(!existingUser){
             return res.status(400).send({msg : "invalid mail address"});
+        }
+            
 
         //check whether user enter password is correct
         const passwordIsCorrect = await bcrypt.compare(password,existingUser.hashPassword);
@@ -115,7 +119,7 @@ router.post('/login',async(req,res)=>{
             user : existingUser._id,
             },process.env.JWT_SECRET);
         
-        
+        console.log("ok3")
          //send the token in the HTTP-only cookie
         res.cookie("token",token,{
             httpOnly : true

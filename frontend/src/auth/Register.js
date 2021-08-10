@@ -17,6 +17,7 @@ export default function Register(e) {
     const [verifyPassword, setconPassword] = useState("");
 
     async function register(){
+        //validate user entered data
         if(firstName.length==0){
             document.getElementById('fName_error').style.display = "block";
             document.getElementById('lName_error').style.display = "none";
