@@ -126,7 +126,7 @@ router.post('/login',async(req,res)=>{
 
 
 
-//This route for log out user
+//This route for log out  a login user
 router.route("/logout").get(async(req,res)=>{
     res.cookie("token","",{
         httpOnly:true,
