@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom'
 import AuthContext from '../context/Authcontext';
 import "./Navbar.css"
 export default function NavBar() {
+
+    //This is used to notify that whether this user already loged in or not
     const { loggedIn } = useContext(AuthContext);
     return (
             <nav class="navbar navbar-dark bg-dark">
@@ -24,10 +26,6 @@ export default function NavBar() {
                     </>)
                 }
 
-
-                
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
             </nav>
