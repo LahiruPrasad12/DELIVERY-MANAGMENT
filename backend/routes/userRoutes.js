@@ -134,4 +134,24 @@ router.route("/logout").get(async(req,res)=>{
     }).send();
 })
 
+
+
+//This route will return logedin user's mail address
+router.get("/loggedIn",(req,res)=>{
+    try{
+        console.log(req.cookies.token);
+        const token = req.cookies.token;
+
+        if(!token)
+            res.json(null);
+
+        jwt.verify(token,process.env.JWT_SECRET);
+        res.send({mail : mail})
+
+    }catch(err){
+        console.error(err);
+        res.json(null);
+    }
+})
+
 module.exports = router;
