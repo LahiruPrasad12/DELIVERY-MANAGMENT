@@ -5,6 +5,7 @@ function auth(req,res,next){
 
     try{
 
+        console.log("object")
         console.log(req.cookies.token);
         const token = req.cookies.token;
 

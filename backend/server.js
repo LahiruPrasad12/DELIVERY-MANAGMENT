@@ -39,5 +39,8 @@ connection.once("open", ()=>{
 
 /*---------------------------------set Routes-------------------------------*/
 
-//This route for test
+//This route user account handeling
 app.use("/auth",require('./routes/userRoutes'));
+
+//This route product handeling
+app.use("/product",require('./routes/productRoutes'))
