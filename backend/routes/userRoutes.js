@@ -11,28 +11,33 @@ var userId = null;
 router.post('/register', async(req,res)=>{
     try{
 
+        console.log("Its ok")
         //get all details that user entered
-        const {firstName, lastName, phone, email, address, password, conPassword} = req.body;
+        const {firstName, lastName, phone, email, address, password} = req.body;
 
 
         /*-----------------------validate details-------------------------*/
         //chack user filed all required data
-        if(!firstName || !lastName || !phone || !email || !address || !password || !conPassword)
+        if(!firstName || !lastName || !phone || !email || !address || !password){
+            console.log("erroe1")
             return res.status(400).json({msg : "please enter all required fill"})
+        }
+       
         
         //check password length
-        if(password.length<6)
+        if(password.length<6){
+            console.log("error2")
             return res.status(400).json({msg : "please enter a password of at least 6 character"})
-        
-        //check password and confirm password are match
-        if(password !== conPassword)
-            return res.status(400).json({msg : "please enter the same password twice"})
 
-
+        }
+            
         // check user entered email already existing or not
         const existingUser = await User.findOne({email});
-        if(existingUser)
+        if(existingUser){
+            console.log("error3")
             return res.status(400).json({msg : "email already exists"})
+        }
+            
 
 
         //hash password
@@ -48,7 +53,7 @@ router.post('/register', async(req,res)=>{
 
         userId = newUser._id;
         await newUser.save().then((user)=>{
-           
+          
         }).catch((err)=>{
             res.json(err)
         })

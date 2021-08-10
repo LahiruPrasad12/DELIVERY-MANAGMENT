@@ -1,0 +1,105 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+
+   /* background-image: url(../images/Student.jpg); */
+   background-size: cover;
+   background-attachment: fixed;
+   font-family: 'Times New Roman', Times, serif;
+   
+}
+
+h1{
+    font-size: 50px;
+    color: whitesmoke;
+}
+
+
+.form-control1{
+    background: transparent;
+    border-radius: 0px;
+    border: 0px;
+    border-bottom: 2px solid lightgreen;
+    color: white;
+    font-size: 21px;
+    margin-top: 18px;
+    padding: 10px;
+  
+}
+
+.text-center1{
+    margin-top: 20px;
+    margin-left: 200px;
+    background: transparent;
+    color: black;
+}
+
+.btn-info6{
+    margin-bottom: 1000px;
+    font-size: 21px;
+    width: 200px;
+    margin-top: -10px;
+    background: transparent;
+    margin-left: 200px;
+    color: white;
+    background-color: rgb(2, 203, 238);
+}
+
+.btn-info1{
+    margin-bottom: 1000px;
+    font-size: 21px;
+    width: 200px;
+    margin-top: -30px;
+    margin-left: 235px;
+    background: transparent;
+    color: white;
+}
+
+.btn-info2{
+    margin-bottom: 1000px;
+    font-size: 21px;
+    width: 200px;
+    margin-top: -30px;
+    margin-left: 100px;
+    background: transparent;
+    color: white;
+}
+
+.register{
+    /* margin-bottom: 1000px; */
+    font-size: 21px;
+    margin-top: -980px;
+    width: 300px;
+    margin-left: 200px;
+    background: transparent;
+    color: rgb(0, 0, 0);
+}
+
+
+.btn-info1:hover{
+   color: blue;
+}
+
+
+/* .col-md-6{
+    margin-top: 100px;
+    box-shadow: 10px 10px 50px 100px rgb(255, 255, 255);
+    border-radius: 0px 100px 0px 100px;
+    height: 600px;
+    background: rgba(252, 251, 251, 0);
+
+} */
+
+.bt{
+    
+    margin-top: -100px;
+}
+
+.Forgot{
+    margin-left: 500px;
+    /* margin-bottom: 500px; */
+}
