@@ -8,6 +8,7 @@ import validation from 'validator'
 export default function Register(e) {
    
 
+    //Here define the useState to capture user entere data
     const[firstName,setfName] = useState("");
     const[lastName,setlName] = useState("");
     const[phone,setPhone] = useState("");
@@ -16,7 +17,9 @@ export default function Register(e) {
     const [password, setpassword] = useState("");
     const [verifyPassword, setconPassword] = useState("");
 
+    //This function used to register a new user by saving his data
     async function register(){
+
         //validate user entered data
         if(firstName.length==0){
             document.getElementById('fName_error').style.display = "block";
@@ -92,6 +95,7 @@ export default function Register(e) {
                     password
                 };
     
+                //Here call the user register API end point to register a new user
                 await axios.post("http://localhost:5000/auth/register",registreData).then(()=>{
                     window.location="/login"
                 }).catch((err)=>{

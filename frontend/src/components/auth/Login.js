@@ -9,11 +9,12 @@ export default function Login() {
     const[email,setEmail] = useState("");
     const [password, setpassword] = useState("");
 
-    //This is used to inform that user is loged in
+    //This is used to inform that whether the user is loged in or not
     const {getLogged} = useContext(AuthContext);
 
     async function login(){
        
+        //user entered details validate here
         if(email.length == 0){
             document.getElementById('mail_error').style.display = "block";
             document.getElementById('exists').style.display = "none";
@@ -24,6 +25,7 @@ export default function Login() {
                     password,
                 }
     
+                //Here called the user login api end point to log a user to the system
                 await axios.post("http://localhost:5000/auth/login",loginData).then(()=>{
                     getLogged();
                 }).catch(()=>{
