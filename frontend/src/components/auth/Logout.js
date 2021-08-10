@@ -1,6 +1,6 @@
 import React,{useHistory, useContext, useEffect, useState} from 'react'
 import axios from 'axios';
-import AuthContext from '../context/Authcontext';
+import AuthContext from '../context/Authcontext'
 
 
 export default function Logout() {

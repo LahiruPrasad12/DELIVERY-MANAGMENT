@@ -26,7 +26,6 @@ export default function Login() {
     
                 await axios.post("http://localhost:5000/auth/login",loginData).then(()=>{
                     getLogged();
-                   alert("login success");
                 }).catch(()=>{
                     document.getElementById('exists').style.display = "block";
                     document.getElementById('mail_error').style.display = "none";
