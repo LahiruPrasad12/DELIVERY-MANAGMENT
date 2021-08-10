@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 
-var mail = null;
+var userId = null;
 
 
 //This route is used to register a new user
@@ -39,13 +39,14 @@ router.post('/register', async(req,res)=>{
         const salt =  await bcrypt.genSalt();
         const hashPassword = await bcrypt.hash(password,salt);
 
-        mail = email;
+        
 
         //save new user accout to database
         const newUser = new User({
             firstName, lastName, phone, email, address, hashPassword
         })
 
+        userId = newUser._id;
         await newUser.save().then((user)=>{
            
         }).catch((err)=>{
@@ -102,7 +103,7 @@ router.post('/login',async(req,res)=>{
         if(!passwordIsCorrect)
             return res.status(400).send({msg : "invalid password"});
 
-        mail = email;
+        userId = existingUser._id;
 
         //sign the token
         const token = jwt.sign({
@@ -146,7 +147,7 @@ router.get("/loggedIn",(req,res)=>{
             res.json(null);
 
         jwt.verify(token,process.env.JWT_SECRET);
-        res.send({mail : mail})
+        res.send({userId : userId})
 
     }catch(err){
         console.error(err);
