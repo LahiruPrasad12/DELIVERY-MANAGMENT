@@ -1,7 +1,17 @@
 .navLink{
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
-    margin-right: 60px;
+    text-decoration: none;
+    margin-right: 30px;
     margin-top: 6px;
     color: white;
+}
+
+
+.navLinks{
+    margin-right: 400px;
+}
+
+.navLinkLogout{
+    margin-left: 100px;
 }
