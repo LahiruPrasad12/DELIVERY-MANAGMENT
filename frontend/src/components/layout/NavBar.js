@@ -17,7 +17,7 @@ export default function NavBar() {
                         {/* <a class="nav-link active" aria-current="page" href="/logout">Logout</a> */}
                         <div className="navLinks">
                             <Link to = "/" className="navLink">ADD-PRODUCT</Link>
-                            <Link to = "/view" className="navLink">VIEW-MY-PRODUCTS</Link>
+                            <Link to = "/myView" className="navLink">VIEW-MY-PRODUCTS</Link>
                             <Link to = "/view" className="navLink">VIEW-ALL-PRODUCTS</Link>
                         </div>
 
