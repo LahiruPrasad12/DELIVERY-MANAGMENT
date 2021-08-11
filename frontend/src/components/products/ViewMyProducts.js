@@ -34,7 +34,7 @@ export default function ViewMyProducts() {
                 <th>Quantity</th>
                 <th>Description</th>
                 <th>User Id</th>
-                <th></th>
+                {/* <th></th> */}
             </tr>
             </thead>
 
@@ -47,7 +47,7 @@ export default function ViewMyProducts() {
                         <td>{product.quantity}</td>
                         <td>{product.description}</td>
                         <td>{product.userId}</td>
-                        <td><Link to={"/viewOne/" + product._id}>View</Link></td>
+                        {/* <td><Link to={"/viewOne/" + product._id}>View</Link></td> */}
                     </tr>
              
            
