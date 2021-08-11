@@ -32,6 +32,31 @@ router.post('/add',auth,async(req,res)=>{
 
 
 
+//This route is used to get all product data
+router.get('/view',auth,async(req,res)=>{
+    Products.find().then((product)=>{
+        res.json(product)
+    }).catch((err)=>{
+        return res.status(500).json({msg:err})
+    })
+})
+
+
+
+//This route is used to get some specific product
+router.get('/getOne/:id',auth,async(req,res)=>{
+    var id = req.params.id;
+
+    Products.findById(id).then((product)=>{
+        
+            res.json(product);
+    
+    }).catch((err)=>{
+        console.log(err);
+    })
+})
+
+
 
 //This route used to update a product details
 router.put('/update/:id',auth,async(req,res)=>{
@@ -52,7 +77,16 @@ router.put('/update/:id',auth,async(req,res)=>{
 
 
 
-
+//This route used to retrieve all products that are relevent to one user id
+router.get('/view/:id',auth,async(req,res)=>{
+    let productId = req.params.id;
+    console.log(productId)
+    await Products.find({userId : productId}).then((product)=>{
+        res.json(product);
+    }).catch((err)=>{
+        console.log(err);
+    })
+})
 
 //This route used to delete products from table
 router.delete('/remove/:id',auth,async(req,res)=>{
