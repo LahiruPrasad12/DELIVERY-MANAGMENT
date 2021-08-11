@@ -9,18 +9,28 @@ export default function NavBar() {
     return (
             <nav class="navbar navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand">Spera Labs</a>
+                {/* <a class="navbar-brand">Spera Labs</a> */}
                 <form class="d-flex">
 
                 {
                     loggedIn != null && (<>
                         {/* <a class="nav-link active" aria-current="page" href="/logout">Logout</a> */}
-                        <Link to = "/logout" className="navLink">LOGOUT</Link>
+                        <div className="navLinks">
+                            <Link to = "/add" className="navLink">ADD-NEW-PRODUCT</Link>
+                            <Link to = "/view" className="navLink">VIEW-ALL-PRODUCTS</Link>
+                        </div>
+
+                        <div className="navLinkLogout">
+                            <Link to = "/logout" className="navLink">LOGOUT</Link>
+                        </div>
+                        
                     </>)
                 }
                 
                 {
                     loggedIn == null && (<>
+
+                        
                             <Link to="/" className="navLink">LOGIN</Link>
                             <Link to="/register" className="navLink">REGISTER</Link>
                     </>)
