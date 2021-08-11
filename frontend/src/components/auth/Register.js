@@ -1,5 +1,5 @@
 import React,{ useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import axios from "axios"
 import "./register.css"
 import validation from 'validator'
@@ -18,6 +18,10 @@ export default function Register(e) {
 
     //This function used to register a new user by saving his data
     async function register(){
+
+            //This is used to inform that whether the user is loged in or not
+            const {getLogged} = useContext(AuthContext);
+            const history = useHistory();
 
         //validate user entered data
         if(firstName.length==0){
@@ -96,7 +100,9 @@ export default function Register(e) {
     
                 //Here call the user register API end point to register a new user
                 await axios.post("http://localhost:5000/auth/register",registreData).then(()=>{
-                    window.location="/login"
+                    getLogged();
+                    history.push("/");
+                    // window.location="/login"
                 }).catch((err)=>{
                     document.getElementById('fName_error').style.display = "none";
                     document.getElementById('lName_error').style.display = "none";
