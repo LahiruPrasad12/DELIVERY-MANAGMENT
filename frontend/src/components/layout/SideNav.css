@@ -1,0 +1,40 @@
+.container-fluid-side{
+    margin-top: 20px;
+    margin-left: 10px;
+    background: rgb(4, 222, 238);
+    padding-top: 150PX;
+    text-align: center;
+    box-shadow: 10px 10px 50px -10px rgb(8, 8, 8, 8);
+    border-radius: 30px 10px 30px 10px;
+    height: 600px;
+    width: 300px;
+    font-size: 30px;
+    color: white;
+   text-shadow: white;
+    /* background: rgba(240, 16, 16, 0); */
+}
+
+.container-fluid-side-2{
+    margin-top: 30px;
+    margin-left: 370px;
+    background: rgb(8, 235, 235);
+    padding-top: 150PX;
+    text-align: center;
+    box-shadow: 10px 10px 50px -10px rgb(8, 8, 8, 8);
+    border-radius: 30px 10px 30px 10px;
+    height: 600px;
+    width: 1100px;
+    /* background: rgba(10, 238, 238, 0); */
+}
+
+/* .bcImage{
+    width: 1100px;
+    height: 600px;
+    border-radius: 30px 10px 30px 10px;
+    margin-left: 250px;
+    background: white;
+    margin-top: -218px;
+    margin-left: 0px;
+    background-color: chocolate;
+} */
+

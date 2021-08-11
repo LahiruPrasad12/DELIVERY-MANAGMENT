@@ -1,5 +1,6 @@
-import React,{ useState } from 'react'
+import React,{ useState , useContext} from 'react'
 import { Link, useHistory } from 'react-router-dom';
+import AuthContext from '../context/Authcontext';
 import axios from "axios"
 import "./register.css"
 import validation from 'validator'
@@ -17,11 +18,11 @@ export default function Register(e) {
     const [verifyPassword, setconPassword] = useState("");
 
     //This function used to register a new user by saving his data
-    async function register(){
+    async function Reg(){
 
             //This is used to inform that whether the user is loged in or not
             const {getLogged} = useContext(AuthContext);
-            const history = useHistory();
+            // const history = useHistory();
 
         //validate user entered data
         if(firstName.length==0){
@@ -101,8 +102,8 @@ export default function Register(e) {
                 //Here call the user register API end point to register a new user
                 await axios.post("http://localhost:5000/auth/register",registreData).then(()=>{
                     getLogged();
-                    history.push("/");
-                    // window.location="/login"
+                    // history.push("/");
+                    window.location="/login"
                 }).catch((err)=>{
                     document.getElementById('fName_error').style.display = "none";
                     document.getElementById('lName_error').style.display = "none";
@@ -158,7 +159,7 @@ export default function Register(e) {
                   <div id="conPassword_error" style={{ display: "none", color:"red", marginLeft:0,marginTop:-5, background:"transparent" }}>confirm password doesn't match</div><br />
                   <div id="exists" style={{ display: "none", color:"red", marginLeft:0,marginTop:-30 }}>entered mail address is already exists</div><br />
 
-                <a href onClick={e=>{register(e)}}  ><div className="btn btn-info6">Register</div></a>
+                <a href onClick={e=>{Reg(e)}}  ><div className="btn btn-info6">Register</div></a>
                <h3 className= "register">I haven an account?<Link to="/login" className="regLink"> Log in</Link></h3>
             </div>
             
