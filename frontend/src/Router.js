@@ -6,6 +6,7 @@ import NavBar from './components/layout/NavBar';
 import AuthContext from './components/context/Authcontext';
 import Logout from './components/auth/Logout';
 import AddNewProducts from './components/products/AddNewProducts';
+import ViewAllProduct from './components/products/ViewAllProduct';
 
 
 
@@ -20,7 +21,7 @@ export default function Router() {
             loggedIn != null && (<>
                 
                 <Route exact path="/"><AddNewProducts/></Route>
-                <Route exact path="/view"><AddNewProducts/></Route>
+                <Route exact path="/view"><ViewAllProduct/></Route>
                 <Route exact path="/logout"><Logout/></Route>
             </>)
         }
