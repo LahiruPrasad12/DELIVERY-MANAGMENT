@@ -50,6 +50,10 @@ export default function AddNewProducts() {
                 })
 
             }catch(err){
+                document.getElementById('name_error').style.display = "none";
+                document.getElementById('quantity_error').style.display = "none";
+                document.getElementById('description_error').style.display = "none";
+                document.getElementById('some_error').style.display = "block";
 
             }
 

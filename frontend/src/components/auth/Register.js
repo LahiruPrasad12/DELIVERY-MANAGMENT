@@ -17,11 +17,13 @@ export default function Register(e) {
     const [password, setpassword] = useState("");
     const [verifyPassword, setconPassword] = useState("");
 
+                //This is used to inform that whether the user is loged in or not
+                const {getLogged} = useContext(AuthContext);
+
     //This function used to register a new user by saving his data
     async function Reg(){
 
-            //This is used to inform that whether the user is loged in or not
-            const {getLogged} = useContext(AuthContext);
+
             // const history = useHistory();
 
         //validate user entered data
@@ -102,8 +104,7 @@ export default function Register(e) {
                 //Here call the user register API end point to register a new user
                 await axios.post("http://localhost:5000/auth/register",registreData).then(()=>{
                     getLogged();
-                    // history.push("/");
-                    window.location="/login"
+                    window.location="/"
                 }).catch((err)=>{
                     document.getElementById('fName_error').style.display = "none";
                     document.getElementById('lName_error').style.display = "none";
@@ -160,7 +161,7 @@ export default function Register(e) {
                   <div id="exists" style={{ display: "none", color:"red", marginLeft:0,marginTop:-30 }}>entered mail address is already exists</div><br />
 
                 <a href onClick={e=>{Reg(e)}}  ><div className="btn btn-info6">Register</div></a>
-               <h3 className= "register">I haven an account?<Link to="/login" className="regLink"> Log in</Link></h3>
+               <h3 className= "register">I haven an account?<Link to="/" className="regLink"> Log in</Link></h3>
             </div>
             
             <div className="col-md-3">
