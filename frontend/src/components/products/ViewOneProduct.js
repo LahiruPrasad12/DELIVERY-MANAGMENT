@@ -31,6 +31,7 @@ export default function ViewOneProduct() {
     },[])
 
 
+    //This function used to update product detals
     async function update(){
 
         var title = document.getElementById("edtBtn");
@@ -97,6 +98,30 @@ export default function ViewOneProduct() {
         }
     }
 
+
+    //This function used to delete a product from databse
+    async function deleteProduct(){
+        try{
+            const result = window.confirm("Do you really want to Delete?");
+
+            if(result==true){
+
+                axios.delete(`http://localhost:5000/product/remove/${id}`).then((res) => {
+                    console.log(res);
+                    window.location = "/view";
+                }).catch(() => {
+                    document.getElementById('some_error').style.display = "block";
+                })
+
+            }
+        }catch(err){
+            document.getElementById('some_error').style.display = "block";
+        }
+    }
+
+
+
+
     return (
         <div className="display-box">
             <div className="header">VIEW-ONE-PRODUCTS</div>
@@ -116,7 +141,7 @@ export default function ViewOneProduct() {
                 <div id="some_error" style={{  display: "none", color:"red", marginRight:450,marginTop:-5, fontSize:20}}>something going else please try agein later...</div><br />
 
                 <input type="text" id="myText4" className="detail" value={userId} disabled = "true"/><br/>
-                <button className="edite" id="edtBtn" onClick={e=>{update()}}>Edite</button><button className="delete">Delete</button>
+                <button className="edite" id="edtBtn" onClick={e=>{update()}}>Edite</button><button className="delete" onClick={e=>{deleteProduct()}}>Delete</button>
             </div>
         </div>
     )
