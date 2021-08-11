@@ -20,6 +20,7 @@ export default function Router() {
             loggedIn != null && (<>
                 
                 <Route exact path="/"><AddNewProducts/></Route>
+                <Route exact path="/view"><AddNewProducts/></Route>
                 <Route exact path="/logout"><Logout/></Route>
             </>)
         }
