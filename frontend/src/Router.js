@@ -7,6 +7,7 @@ import AuthContext from './components/context/Authcontext';
 import Logout from './components/auth/Logout';
 import AddNewProducts from './components/products/AddNewProducts';
 import ViewAllProduct from './components/products/ViewAllProduct';
+import ViewOneProduct from './components/products/ViewOneProduct';
 
 
 
@@ -22,6 +23,7 @@ export default function Router() {
                 
                 <Route exact path="/"><AddNewProducts/></Route>
                 <Route exact path="/view"><ViewAllProduct/></Route>
+                <Route path="/viewOne/:id" exact component={ViewOneProduct} />
                 <Route exact path="/logout"><Logout/></Route>
             </>)
         }

@@ -6,10 +6,12 @@ import { Link, useHistory } from "react-router-dom";
 
 export default function ViewAllProduct() {
 
-    const history = useHistory();
+    //This array uesd to save all details of products
     const [product, setProduct] = useState([]);
 
     useEffect(() => {
+
+        //Call api that return all details of product
         function getAgent() {
             axios.get("http://localhost:5000/product/view").then((res) => {
                 setProduct(res.data);
@@ -43,7 +45,7 @@ export default function ViewAllProduct() {
                             <td>{product.quantity}</td>
                             <td>{product.description}</td>
                             <td>{product.userId}</td>
-                            <td><Link to={"/front-office-manager/viewOne/" + product._id}>View</Link></td>
+                            <td><Link to={"/viewOne/" + product._id}>View</Link></td>
                         </tr>
                  
                
