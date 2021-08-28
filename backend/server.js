@@ -2,7 +2,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
-const cookieParser = require("cookie-parser");
 require("dotenv").config();
 
 
@@ -11,7 +10,7 @@ require("dotenv").config();
 /*---------------------------------set up server-------------------------------*/
 const app = express();
 app.use(express.json());
-app.use(cookieParser());
+
 
 app.use(cors({
     origin:["http://localhost:3000"],
@@ -46,8 +45,6 @@ connection.once("open", ()=>{
 
 /*---------------------------------set Routes-------------------------------*/
 
-//This route user account handeling
-app.use("/auth",require('./routes/userRoutes'));
 
 //This route product handeling
 app.use("/product",require('./routes/productRoutes'))
